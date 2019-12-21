@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import flv from 'flv.js';
+import { fetchStream } from '../../actions';
 
 class StreamShow extends Component {
   target = React.createRef();
@@ -53,4 +54,10 @@ const mapStateToProps = (state, ownProps) => ({
   stream: state.streams[ownProps.match.params.id]
 });
 
-export default connect(mapStateToProps)(StreamShow);
+const mapDispatchToProps = dispatch => ({
+  fetchStream(id) {
+    dispatch(fetchStream(id));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StreamShow);
