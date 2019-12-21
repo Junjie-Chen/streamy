@@ -9,7 +9,9 @@ class StreamDeletion extends Component {
     this.props.fetchStream(this.props.match.params.id);
   }
 
-  onClick = () => {};
+  onClick = () => {
+    this.props.deleteStream(this.props.match.params.id);
+  };
 
   renderActions() {
     return (
