@@ -1,11 +1,12 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
 import Header from './Header';
+import history from '../history';
 
 const App = () => {
   return (
     <div className="ui container">
-      <Router>
+      <Router history={history}>
         <Header />
       </Router>
     </div>
