@@ -8,6 +8,10 @@ class StreamShow extends Component {
     this.createPlayer();
   }
 
+  componentDidUpdate() {
+    this.createPlayer();
+  }
+
   createPlayer() {
     if (!this.props.stream || this.player) {
       return;
