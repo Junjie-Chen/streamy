@@ -12,6 +12,10 @@ class StreamShow extends Component {
     this.createPlayer();
   }
 
+  componentWillUnmount() {
+    this.player.destroy();
+  }
+
   createPlayer() {
     if (!this.props.stream || this.player) {
       return;
