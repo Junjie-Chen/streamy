@@ -26,8 +26,28 @@ class GoogleAuth extends Component {
     }
   };
 
+  renderAuthButton() {
+    if (this.props.isSignedIn === null) {
+      return null;
+    } else if (this.props.isSignedIn) {
+      return (
+        <button className="ui red google button">
+          <i className="google icon"></i>
+          Sign Out
+        </button>
+      );
+    } else {
+      return (
+        <button className="ui red google button">
+          <i className="google icon"></i>
+          Sign In with Google
+        </button>
+      );
+    }
+  }
+
   render() {
-    return <div>Google Auth</div>;
+    return <div>{this.renderAuthButton()}</div>;
   }
 }
 
