@@ -28,4 +28,8 @@ class StreamDeletion extends Component {
   }
 }
 
-export default connect()(StreamDeletion);
+const mapStateToProps = (state, ownProps) => ({
+  stream: state.streams[ownProps.match.params.id]
+});
+
+export default connect(mapStateToProps)(StreamDeletion);
