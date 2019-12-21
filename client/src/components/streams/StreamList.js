@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class StreamList extends Component {
+  renderCreateButton() {
+    if (this.props.isSignedIn) {
+      return (
+        <div style={{ textAlign: 'right' }}>
+          <Link className="ui button primary" to="/streams/create">Create</Link>
+        </div>
+      );
+    }
+  }
+
   renderEditAndDeleteButtons(stream) {
     if (stream.userId === this.props.currentUserId) {
       return (
@@ -33,6 +43,7 @@ class StreamList extends Component {
       <div>
         <h2>Streams</h2>
         <div className="ui celled list">{this.renderList()}</div>
+        {this.renderCreateButton()}
       </div>
     );
   }
