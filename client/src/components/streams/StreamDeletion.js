@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Modal from '../Modal';
 
 class StreamDeletion extends Component {
   render() {
-    return <div>Stream Deletion</div>;
+    return <Modal />;
   }
 }
 
