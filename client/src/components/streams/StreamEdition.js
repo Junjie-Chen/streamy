@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 import StreamForm from './StreamForm';
 
@@ -19,4 +20,4 @@ class StreamEdition extends Component {
   }
 }
 
-export default StreamEdition;
+export default connect()(StreamEdition);
