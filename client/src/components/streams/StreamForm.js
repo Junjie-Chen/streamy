@@ -53,4 +53,7 @@ const validate = inputValues => {
   return errors;
 };
 
-export default reduxForm()(StreamForm);
+export default reduxForm({
+  form: 'streamForm',
+  validate
+})(StreamForm);
