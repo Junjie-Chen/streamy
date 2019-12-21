@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT, FETCH_STREAMS } from './types';
+import { SIGN_IN, SIGN_OUT, FETCH_STREAMS, FETCH_STREAM } from './types';
 import streams from '../api/streams';
 
 export const signIn = userId => ({
@@ -15,6 +15,15 @@ export const fetchStreams = () => async dispatch => {
 
   dispatch({
     type: FETCH_STREAMS,
+    payload: response.data
+  });
+};
+
+export const fetchStream = id => async dispatch => {
+  const response = await streams.get(`/streams/${id}`);
+
+  dispatch({
+    type: FETCH_STREAM,
     payload: response.data
   });
 };
