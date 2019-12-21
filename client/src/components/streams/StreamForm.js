@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Field } from 'redux-form';
 
 class StreamForm extends Component {
-  renderInput = inputProps => {
+  renderInput = ({ input, label }) => {
     return (
       <div className="field">
-        <label>{inputProps.label}</label>
-        <input {...inputProps.input} autoComplete="off" />
+        <label>{label}</label>
+        <input {...input} autoComplete="off" />
       </div>
     );
   };
