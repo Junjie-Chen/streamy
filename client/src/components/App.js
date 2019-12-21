@@ -1,6 +1,7 @@
 import React from 'react';
-import { Router, Switch } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import Header from './Header';
+import StreamList from './streams/StreamList';
 import history from '../history';
 
 const App = () => {
@@ -9,7 +10,9 @@ const App = () => {
       <Router history={history}>
         <div>
           <Header />
-          <Switch></Switch>
+          <Switch>
+            <Route path="/" exact component={StreamList} />
+          </Switch>
         </div>
       </Router>
     </div>
