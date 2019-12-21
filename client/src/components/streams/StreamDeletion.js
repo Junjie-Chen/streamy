@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal';
+import { fetchStream, deleteStream } from '../../actions';
 
 class StreamDeletion extends Component {
   onClick = () => {};
@@ -32,4 +33,13 @@ const mapStateToProps = (state, ownProps) => ({
   stream: state.streams[ownProps.match.params.id]
 });
 
-export default connect(mapStateToProps)(StreamDeletion);
+const mapDispatchToProps = dispatch => ({
+  fetchStream(id) {
+    dispatch(fetchStream(id));
+  },
+  deleteStream(id) {
+    dispatch(deleteStream(id));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StreamDeletion);
