@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import flv from 'flv.js';
 
 class StreamShow extends Component {
@@ -48,4 +49,4 @@ class StreamShow extends Component {
   }
 }
 
-export default StreamShow;
+export default connect()(StreamShow);
