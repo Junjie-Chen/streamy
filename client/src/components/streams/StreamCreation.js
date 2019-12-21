@@ -4,7 +4,9 @@ import StreamForm from './StreamForm';
 import { createStream } from '../../actions';
 
 class StreamCreation extends Component {
-  onSubmit = () => {};
+  onSubmit = inputValues => {
+    this.props.createStream(inputValues);
+  };
 
   render() {
     return (
