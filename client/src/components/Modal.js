@@ -1,7 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 const Modal = () => {
-  return <div>Modal</div>;
+  return ReactDOM.createPortal(
+    document.getElementById('modal')
+  );
 };
 
 export default Modal;
