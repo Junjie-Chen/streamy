@@ -5,6 +5,10 @@ import StreamForm from './StreamForm';
 import { fetchStream, editStream } from '../../actions';
 
 class StreamEdition extends Component {
+  componentDidMount() {
+    this.props.fetchStream(this.props.match.params.id);
+  }
+
   onSubmit = () => {};
 
   render() {
