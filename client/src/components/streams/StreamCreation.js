@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import StreamForm from './StreamForm';
 
 class StreamCreation extends Component {
@@ -14,4 +15,4 @@ class StreamCreation extends Component {
   }
 }
 
-export default StreamCreation;
+export default connect()(StreamCreation);
