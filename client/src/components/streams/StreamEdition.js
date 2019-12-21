@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import StreamForm from './StreamForm';
+import { fetchStream, editStream } from '../../actions';
 
 class StreamEdition extends Component {
   onSubmit = () => {};
@@ -24,4 +25,13 @@ const mapStateToProps = (state, ownProps) => ({
   stream: state.streams[ownProps.match.params.id]
 });
 
-export default connect(mapStateToProps)(StreamEdition);
+const mapDispatchToProps = dispatch => ({
+  fetchStream(id) {
+    dispatch(fetchStream(id));
+  },
+  editStream(id, inputValues) {
+    dispatch(editStream(id, inputValues));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StreamEdition);
