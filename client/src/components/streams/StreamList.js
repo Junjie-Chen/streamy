@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class StreamList extends Component {
   render() {
-    return <div>Stream List</div>;
+    return (
+      <div>
+        <h2>Streams</h2>
+      </div>
+    );
   }
 }
 
