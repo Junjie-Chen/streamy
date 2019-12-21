@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import flv from 'flv.js';
 
 class StreamShow extends Component {
   target = React.createRef();
+
+  createPlayer() {
+    if (!this.props.stream || this.player) {
+      return;
+    }
+
+    this.player = flv.createPlayer({
+      type: 'flv',
+      url: `http://localhost:8000/live/${this.props.match.params.id}.flv`
+    });
+
+    this.player.attachMediaElement(this.target.current);
+
+    this.player.load();
+  }
 
   render() {
     if (!this.props.stream) {
