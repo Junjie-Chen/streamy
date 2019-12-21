@@ -15,4 +15,4 @@ class StreamCreation extends Component {
   }
 }
 
-export default connect()(StreamCreation);
+export default connect(null)(StreamCreation);
