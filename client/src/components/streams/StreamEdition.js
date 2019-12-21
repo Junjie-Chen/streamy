@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StreamForm from './StreamForm';
 
 class StreamEdition extends Component {
   render() {
@@ -9,6 +10,7 @@ class StreamEdition extends Component {
     return (
       <div>
         <h3>Edit a Stream</h3>
+        <StreamForm />
       </div>
     );
   }
