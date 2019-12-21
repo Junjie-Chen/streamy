@@ -6,7 +6,11 @@ class StreamEdition extends Component {
       return <div>Loading...</div>;
     }
 
-    return <div>Stream Edition</div>;
+    return (
+      <div>
+        <h3>Edit a Stream</h3>
+      </div>
+    );
   }
 }
 
