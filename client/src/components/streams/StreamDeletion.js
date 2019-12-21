@@ -5,6 +5,10 @@ import Modal from '../Modal';
 import { fetchStream, deleteStream } from '../../actions';
 
 class StreamDeletion extends Component {
+  componentDidMount() {
+    this.props.fetchStream(this.props.match.params.id);
+  }
+
   onClick = () => {};
 
   renderActions() {
