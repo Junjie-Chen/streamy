@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal';
 import { fetchStream, deleteStream } from '../../actions';
+import history from '../../history';
 
 class StreamDeletion extends Component {
   componentDidMount() {
@@ -31,7 +32,7 @@ class StreamDeletion extends Component {
   }
 
   render() {
-    return <Modal header="Delete the Stream" content={this.renderContent()} actions={this.renderActions()} />;
+    return <Modal header="Delete the Stream" content={this.renderContent()} actions={this.renderActions()} onDismiss={() => history.push('/')} />;
   }
 }
 
