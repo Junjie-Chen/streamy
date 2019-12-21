@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StreamForm from './StreamForm';
+import { createStream } from '../../actions';
 
 class StreamCreation extends Component {
   onSubmit = () => {};
@@ -15,4 +16,10 @@ class StreamCreation extends Component {
   }
 }
 
-export default connect(null)(StreamCreation);
+const mapDispatchToProps = dispatch => ({
+  createStream(inputValues) {
+    dispatch(createStream(inputValues));
+  }
+});
+
+export default connect(null, mapDispatchToProps)(StreamCreation);
