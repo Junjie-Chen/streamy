@@ -16,6 +16,7 @@ class StreamForm extends Component {
       <form className="ui form error">
         <Field name="title" label="Enter Title" component={this.renderInput} />
         <Field name="description" label="Enter Description" component={this.renderInput} />
+        <button className="ui button primary">Submit</button>
       </form>
     );
   }
