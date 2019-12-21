@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import Modal from '../Modal';
 
 class StreamDeletion extends Component {
+  onClick = () => {};
+
   renderActions() {
     return (
       <React.Fragment>
-        <button className="ui button negative">Delete</button>
+        <button className="ui button negative" onClick={this.onClick}>Delete</button>
         <Link className="ui button" to="/">Cancel</Link>
       </React.Fragment>
     );
