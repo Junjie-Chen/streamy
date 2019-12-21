@@ -7,6 +7,8 @@ class StreamShow extends Component {
   target = React.createRef();
 
   componentDidMount() {
+    this.props.fetchStream(this.props.match.params.id);
+
     this.createPlayer();
   }
 
