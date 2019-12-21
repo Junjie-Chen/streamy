@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class GoogleAuth extends Component {
   componentDidMount() {
@@ -23,4 +24,4 @@ class GoogleAuth extends Component {
   }
 }
 
-export default GoogleAuth;
+export default connect()(GoogleAuth);
