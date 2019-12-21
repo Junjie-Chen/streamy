@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Field } from 'redux-form';
 
 class StreamForm extends Component {
-  renderError(meta) {
-    if (meta.error && meta.touched) {
+  renderError({ error, touched }) {
+    if (error && touched) {
       return (
         <div className="ui error message">
-          <div className="header">{meta.error}</div>
+          <div className="header">{error}</div>
         </div>
       );
     }
