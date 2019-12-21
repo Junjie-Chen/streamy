@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class StreamForm extends Component {
   render() {
-    return <div>Stream Form</div>;
+    return <form className="ui form error"></form>;
   }
 }
 
