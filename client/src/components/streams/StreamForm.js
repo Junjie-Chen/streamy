@@ -6,7 +6,7 @@ class StreamForm extends Component {
     return (
       <div className="field">
         <label>{inputProps.label}</label>
-        <input value={inputProps.input.value} onChange={inputProps.input.onChange} autoComplete="off" />
+        <input {...inputProps.input} autoComplete="off" />
       </div>
     );
   };
