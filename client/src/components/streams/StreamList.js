@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchStreams } from '../../actions';
 
 class StreamList extends Component {
   renderCreateButton() {
@@ -56,4 +57,10 @@ const mapStateToProps = state => ({
   isSignedIn: state.auth.isSignedIn
 });
 
-export default connect(mapStateToProps)(StreamList);
+const mapDispatchToProps = dispatch => ({
+  fetchStreams() {
+    dispatch(fetchStreams());
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StreamList);
