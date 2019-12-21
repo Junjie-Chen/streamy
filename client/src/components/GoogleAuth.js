@@ -8,9 +8,13 @@ class GoogleAuth extends Component {
         scope: 'email'
       }).then(() => {
         this.auth = window.gapi.auth2.getAuthInstance();
+
+        this.onAuthChange();
       });
     });
   }
+
+  onAuthChange = () => {};
 
   render() {
     return <div>Google Auth</div>;
