@@ -49,4 +49,8 @@ class StreamShow extends Component {
   }
 }
 
-export default connect()(StreamShow);
+const mapStateToProps = (state, ownProps) => ({
+  stream: state.streams[ownProps.match.params.id]
+});
+
+export default connect(mapStateToProps)(StreamShow);
