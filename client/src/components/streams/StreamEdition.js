@@ -20,4 +20,8 @@ class StreamEdition extends Component {
   }
 }
 
-export default connect()(StreamEdition);
+const mapStateToProps = (state, ownProps) => ({
+  stream: state.streams[ownProps.match.params.id]
+});
+
+export default connect(mapStateToProps)(StreamEdition);
