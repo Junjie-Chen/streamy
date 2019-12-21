@@ -3,7 +3,7 @@ import Modal from '../Modal';
 
 class StreamDeletion extends Component {
   render() {
-    return <Modal />;
+    return <Modal header="Delete the Stream" />;
   }
 }
 
