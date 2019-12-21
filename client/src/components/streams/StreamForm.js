@@ -39,4 +39,18 @@ class StreamForm extends Component {
   }
 }
 
+const validate = inputValues => {
+  const errors = {};
+
+  if (!inputValues.title) {
+    errors.title = 'You must enter a title.';
+  }
+
+  if (!inputValues.description) {
+    errors.description = 'You must enter a description.';
+  }
+
+  return errors;
+};
+
 export default StreamForm;
