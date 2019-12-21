@@ -4,6 +4,10 @@ import flv from 'flv.js';
 class StreamShow extends Component {
   target = React.createRef();
 
+  componentDidMount() {
+    this.createPlayer();
+  }
+
   createPlayer() {
     if (!this.props.stream || this.player) {
       return;
