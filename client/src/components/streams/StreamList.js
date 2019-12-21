@@ -50,4 +50,10 @@ class StreamList extends Component {
   }
 }
 
-export default connect()(StreamList);
+const mapStateToProps = state => ({
+  streams: Object.values(state.streams),
+  currentUserId: state.auth.userId,
+  isSignedIn: state.auth.isSignedIn
+});
+
+export default connect(mapStateToProps)(StreamList);
