@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import StreamForm from './StreamForm';
 
 class StreamEdition extends Component {
@@ -10,7 +11,7 @@ class StreamEdition extends Component {
     return (
       <div>
         <h3>Edit a Stream</h3>
-        <StreamForm />
+        <StreamForm initialValues={_.pick(this.props.stream, 'title', 'description')} />
       </div>
     );
   }
