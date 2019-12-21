@@ -9,7 +9,9 @@ class StreamEdition extends Component {
     this.props.fetchStream(this.props.match.params.id);
   }
 
-  onSubmit = () => {};
+  onSubmit = inputValues => {
+    this.props.editStream(this.props.match.params.id, inputValues);
+  };
 
   render() {
     if (!this.props.stream) {
